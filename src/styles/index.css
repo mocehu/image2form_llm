@@ -1,0 +1,167 @@
+@import './variables.css';
+@import './animations.css';
+@import './typography.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--vp-font-family);
+}
+
+body {
+  background: var(--vp-background);
+  color: var(--vp-text);
+  font-family: var(--vp-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* 标准卡片样式 */
+.vision-card {
+  background: var(--vp-card-bg);
+  border-radius: var(--vp-radius-xl);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--vp-border);
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vision-card:hover {
+  box-shadow: var(--vp-shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* 玻璃拟态按钮 */
+.vision-btn {
+  background: var(--vp-btn-bg);
+  color: var(--vp-btn-text);
+  border: 1px solid var(--vp-border);
+  border-radius: var(--vp-radius-md);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.vision-btn:hover {
+  background: var(--vp-btn-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--vp-btn-shadow-hover);
+}
+
+.vision-btn:active {
+  transform: translateY(0);
+}
+
+.vision-btn-primary {
+  background: var(--vp-primary);
+  color: white;
+}
+
+.vision-btn-primary:hover {
+  background: var(--vp-primary-hover);
+}
+
+.vision-heading {
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--vp-primary), var(--vp-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+/* 输入框样式 */
+.vision-input {
+  background: var(--vp-input-bg);
+  border: 1px solid var(--vp-border);
+  border-radius: var(--vp-radius-md);
+  padding: 12px 16px;
+  color: var(--vp-text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  width: 100%;
+}
+
+.vision-input:focus {
+  outline: none;
+  border-color: var(--vp-primary);
+  box-shadow: 0 0 0 3px rgba(var(--vp-primary-rgb), 0.2);
+}
+
+/* 标签和布局 */
+.vision-label {
+  color: var(--vp-text-muted);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.vision-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.vision-flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.vision-flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .vision-container {
+    padding: 1rem;
+  }
+  
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vision-flex {
+    flex-direction: column;
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-scrollbar-track);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-scrollbar-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-scrollbar-thumb-hover);
+} 

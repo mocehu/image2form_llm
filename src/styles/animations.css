@@ -1,0 +1,187 @@
+/* 淡入效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 向上淡入 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 向下淡入 */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 缩放淡入 */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 脉冲效果 */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 闪烁效果 */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* 波纹效果 */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* 进度条动画 */
+@keyframes progressShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 思考动画 */
+@keyframes thinking {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* 3D旋转效果 */
+@keyframes rotate3d {
+  from {
+    transform: perspective(1200px) rotateY(0);
+  }
+  to {
+    transform: perspective(1200px) rotateY(360deg);
+  }
+}
+
+/* Vision Pro浮动效果 */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* 添加动画类 */
+.fade-in {
+  animation: fadeIn var(--vp-duration-normal) ease-out forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp var(--vp-duration-normal) ease-out forwards;
+}
+
+.fade-in-down {
+  animation: fadeInDown var(--vp-duration-normal) ease-out forwards;
+}
+
+.scale-in {
+  animation: scaleIn var(--vp-duration-normal) cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* 延迟动画类 */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* 动画持续时间类 */
+.duration-fast {
+  animation-duration: var(--vp-duration-fast);
+}
+
+.duration-normal {
+  animation-duration: var(--vp-duration-normal);
+}
+
+.duration-slow {
+  animation-duration: var(--vp-duration-slow);
+} 

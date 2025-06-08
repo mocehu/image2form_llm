@@ -1,0 +1,211 @@
+:root {
+  /* 颜色变量 - Vision Pro 风格 */
+  --vp-primary: rgba(10, 132, 255, 1);
+  --vp-primary-rgb: 10, 132, 255;
+  --vp-primary-hover: rgba(0, 122, 245, 1);
+  
+  --vp-secondary: rgba(48, 209, 228, 1);
+  --vp-secondary-rgb: 48, 209, 228;
+  
+  --vp-success: rgba(48, 209, 88, 1);
+  --vp-success-rgb: 48, 209, 88;
+  
+  --vp-warning: rgba(255, 159, 10, 1);
+  --vp-warning-rgb: 255, 159, 10;
+  
+  --vp-danger: rgba(255, 69, 58, 1);
+  --vp-danger-rgb: 255, 69, 58;
+  
+  --vp-info: rgba(100, 210, 255, 1);
+  --vp-info-rgb: 100, 210, 255;
+  
+  /* 中性色调 - 深色主题 */
+  --vp-background: rgba(19, 19, 19, 1);
+  --vp-surface: rgba(28, 28, 30, 0.8);
+  --vp-overlay: rgba(44, 44, 46, 0.7);
+  
+  --vp-card-bg: rgba(28, 28, 30, 0.6);
+  --vp-card-bg-hover: rgba(44, 44, 46, 0.6);
+  
+  --vp-border: rgba(255, 255, 255, 0.1);
+  --vp-border-light: rgba(255, 255, 255, 0.05);
+  
+  --vp-text: rgba(255, 255, 255, 0.95);
+  --vp-text-secondary: rgba(255, 255, 255, 0.7);
+  --vp-text-muted: rgba(255, 255, 255, 0.5);
+  
+  /* 输入元素 */
+  --vp-input-bg: rgba(28, 28, 30, 0.7);
+  --vp-input-border: rgba(255, 255, 255, 0.15);
+  
+  /* 按钮样式 */
+  --vp-btn-bg: rgba(58, 58, 60, 0.6);
+  --vp-btn-bg-hover: rgba(68, 68, 70, 0.7);
+  --vp-btn-text: rgba(255, 255, 255, 0.9);
+  
+  /* 画布相关 */
+  --vp-canvas-bg: #ffffff;
+  --vp-canvas-stroke: #000000;
+  --vp-canvas-border: #e0e0e0;
+  
+  /* 阴影效果 */
+  --vp-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 4px 6px -4px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  
+  --vp-shadow-hover: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.25),
+    0 8px 10px -6px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  
+  --vp-btn-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  
+  --vp-btn-shadow-hover: 
+    0 4px 6px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  
+  /* 圆角 */
+  --vp-radius-sm: 8px;
+  --vp-radius-md: 12px;
+  --vp-radius-lg: 16px;
+  --vp-radius-xl: 24px;
+  --vp-radius-full: 9999px;
+  
+  /* 字体 */
+  --vp-font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  /* 滚动条 */
+  --vp-scrollbar-track: rgba(255, 255, 255, 0.05);
+  --vp-scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --vp-scrollbar-thumb-hover: rgba(255, 255, 255, 0.3);
+  
+  /* 动画持续时间 */
+  --vp-duration-fast: 150ms;
+  --vp-duration-normal: 300ms;
+  --vp-duration-slow: 500ms;
+  
+  /* 层级 */
+  --vp-z-header: 40;
+  --vp-z-overlay: 30;
+  --vp-z-dropdown: 20;
+  --vp-z-normal: 10;
+  --vp-z-below: -1;
+  
+  /* 玻璃效果变量 - ProcessingPanel.vue用 */
+  --glass-bg: rgba(28, 28, 30, 0.6);
+  --glass-bg-lighter: rgba(44, 44, 46, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 4px 6px -4px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  --glass-shadow-sm: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  
+  /* 渐变色 */
+  --primary-gradient-start: var(--vp-primary);
+  --primary-gradient-end: var(--vp-secondary);
+  
+  /* 文字颜色 */
+  --text-primary: var(--vp-text);
+  --text-secondary: var(--vp-text-secondary);
+  --text-inverse: white;
+  
+  /* 透明色 */
+  --primary-transparent: rgba(var(--vp-primary-rgb), 0.2);
+  --success-transparent: rgba(var(--vp-success-rgb), 0.2);
+  --warning-transparent: rgba(var(--vp-warning-rgb), 0.2);
+  --warning-transparent-dark: rgba(var(--vp-warning-rgb), 0.5);
+  
+  /* 字体 */
+  --font-mono: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* 浅色模式变量 */
+:root[data-theme="light"] {
+  /* 中性色调 - 浅色主题 */
+  --vp-background: rgba(250, 250, 252, 1);
+  --vp-surface: rgba(255, 255, 255, 0.8);
+  --vp-overlay: rgba(238, 238, 240, 0.7);
+  
+  --vp-card-bg: rgba(255, 255, 255, 0.6);
+  --vp-card-bg-hover: rgba(248, 248, 250, 0.6);
+  
+  --vp-border: rgba(0, 0, 0, 0.1);
+  --vp-border-light: rgba(0, 0, 0, 0.05);
+  
+  --vp-text: rgba(0, 0, 0, 0.95);
+  --vp-text-secondary: rgba(0, 0, 0, 0.7);
+  --vp-text-muted: rgba(0, 0, 0, 0.5);
+  
+  /* 输入元素 */
+  --vp-input-bg: rgba(248, 248, 250, 0.7);
+  --vp-input-border: rgba(0, 0, 0, 0.15);
+  
+  /* 按钮样式 */
+  --vp-btn-bg: rgba(238, 238, 240, 0.6);
+  --vp-btn-bg-hover: rgba(228, 228, 230, 0.7);
+  --vp-btn-text: rgba(0, 0, 0, 0.9);
+  
+  /* 画布相关 */
+  --vp-canvas-bg: #ffffff;
+  --vp-canvas-stroke: #000000;
+  --vp-canvas-border: rgba(0, 0, 0, 0.1);
+  
+  /* 阴影效果 */
+  --vp-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  
+  --vp-shadow-hover: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.15),
+    0 8px 10px -6px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
+  
+  --vp-btn-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  
+  --vp-btn-shadow-hover: 
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
+  
+  /* 滚动条 */
+  --vp-scrollbar-track: rgba(0, 0, 0, 0.05);
+  --vp-scrollbar-thumb: rgba(0, 0, 0, 0.2);
+  --vp-scrollbar-thumb-hover: rgba(0, 0, 0, 0.3);
+  
+  /* 玻璃效果变量 - ProcessingPanel.vue用 */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-bg-lighter: rgba(248, 248, 250, 0.5);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  --glass-shadow-sm: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  
+  /* 透明色 */
+  --primary-transparent: rgba(var(--vp-primary-rgb), 0.1);
+  --success-transparent: rgba(var(--vp-success-rgb), 0.1);
+  --warning-transparent: rgba(var(--vp-warning-rgb), 0.1);
+  --warning-transparent-dark: rgba(var(--vp-warning-rgb), 0.2);
+}
+
+[data-theme="dark"] {
+  /* 深色模式下的画布颜色 */
+  --vp-canvas-bg: #1a1a1a;
+  --vp-canvas-border: #333333;
+  --vp-canvas-stroke: #ffffff;
+} 
