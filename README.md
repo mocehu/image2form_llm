@@ -1,39 +1,42 @@
-# ai_index
+# Image2form AI✨
 
-This template should help get you started developing with Vue 3 in Vite.
+## 项目介绍
 
-## Recommended IDE Setup
+目前是一个纯前端的项目，通过调用多模态大模型接口将图片表单转为JSON格式，本项目采用了 Antdv 来渲染表单，同时自行封装了电子签名组件。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+本项目的前端页面大部分由AI编写，若存在代码重复、设计不合理等情况请谅解。
 
-## Type Support for `.vue` Imports in TS
+本项目的意义在于挖掘大模型在传统领域的应用，例如低代码平台的自动识别表单，希望给更多的开发者在大模型应用开发方面提供更多思路
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+项目已实现功能：
 
-## Customize configuration
+- 大模型接口自定义
+- 深度思考模型的适配（目前只测试了豆包系列，其他模型未测试）
+- 使用 antdv 渲染表单并自定义了电子签名组件
+- 良好视觉效果以及丰富的数据展示
+- 久经考验的提示词，保证输出内容可用性
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## 项目初始化&启动
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## 项目预览图
 
-```sh
-npm run build
-```
+![image-20250608210952780](assets/image-20250608210952780.png)
 
-### Lint with [ESLint](https://eslint.org/)
+![image-20250608211028122](assets/image-20250608211028122.png)
 
-```sh
-npm run lint
-```
+![image-20250608211136974](assets/image-20250608211136974.png)
+
+![image-20250608211307606](assets/image-20250608211307606.png)
+
+![image-20250608211317612](assets/image-20250608211317612.png)
+
+![image-20250608211350491](assets/image-20250608211350491.png)
+
+![image-20250608211449999](assets/image-20250608211449999.png)
+
+![image-20250608211542368](assets/image-20250608211542368.png)
