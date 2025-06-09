@@ -392,7 +392,7 @@ onMounted(() => {
   content: '';
   position: absolute;
   top: 16px;
-  left: -50%;
+  left: -49%;
   width: 100%;
   height: 2px;
   background-color: rgba(var(--vp-primary-rgb), 0.1);

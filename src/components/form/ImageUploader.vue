@@ -18,6 +18,16 @@ const props = defineProps({
 
 const emit = defineEmits(['recognize', 'use-test-data', 'reset', 'upload', 'drop']);
 
+// 错误提示信息
+const errorMessage = ref('');
+
+// 清除错误提示
+const clearErrorMessage = (delay = 3000) => {
+  setTimeout(() => {
+    errorMessage.value = '';
+  }, delay);
+};
+
 // 触发文件选择
 const triggerFileInput = () => {
   document.getElementById('fileInput').click();
@@ -51,6 +61,7 @@ const handleFileUpload = (e) => {
 // 处理拖拽上传
 const handleDrop = (e) => {
   e.preventDefault();
+  isDragging.value = false;
   if (props.loading) return;
 
   if (e.dataTransfer && e.dataTransfer.files.length > 0) {
@@ -73,6 +84,16 @@ const handleDragOver = (e) => {
 
 const handleDragLeave = () => {
   isDragging.value = false;
+};
+
+// 处理识别表单结构按钮点击
+const handleRecognizeClick = () => {
+  if (!props.imageUrl) {
+    errorMessage.value = '请先上传图片';
+    clearErrorMessage();
+    return;
+  }
+  emit('recognize');
 };
 </script>
 
@@ -137,8 +158,18 @@ const handleDragLeave = () => {
         <span>{{ successMessage }}</span>
       </div>
 
+      <div v-if="errorMessage" class="error-message">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>{{ errorMessage }}</span>
+      </div>
+
       <div class="actions">
-        <button class="vision-btn vision-btn-primary" :disabled="!imageUrl || loading" @click="emit('recognize')">
+        <button class="vision-btn vision-btn-primary" @click="handleRecognizeClick">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 20h9"></path>
@@ -338,26 +369,28 @@ const handleDragLeave = () => {
   justify-content: flex-end;
 }
 
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 76, 76, 0.1);
+  border: 1px solid rgba(255, 76, 76, 0.3);
+  border-radius: var(--vp-radius-md);
+  color: #ff4c4c;
+  margin-top: 0.5rem;
+}
+
 .success-message {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(var(--vp-primary-rgb), 0.1);
+  border: 1px solid rgba(var(--vp-primary-rgb), 0.3);
   border-radius: var(--vp-radius-md);
-  background: rgba(var(--vp-success-rgb), 0.1);
-  color: var(--vp-success);
-  font-size: 0.9rem;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  color: var(--vp-primary);
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 640px) {
